@@ -13884,7 +13884,7 @@ So</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>K-fold cross validation allows us to split data set in k bins and run k number of separate learning experiments. In each experiment 1 bin is used for testing and other bins are used for training. Each time learning experiment is run, we'll use different bin for training and other bins for testing. After all learning experiments are done we are calculating average test results of all experiments.
+<p>K-fold cross validation allows us to split <strong>training</strong> data set in k bins and run k number of separate learning experiments. In each experiment 1 bin is used for testing and other bins are used for training. Each time learning experiment is run, we'll use different bin for training and other bins for testing. After all learning experiments are done we are calculating average test results of all experiments.
 This way we can use all data for training and all data for testing as well.
 K-fold CV therefore gives much better performance estimation that just classical train/test.
 How k-fold CV helps Grid Search? 
@@ -13893,7 +13893,12 @@ Knowledge about test set would leak into model and it would be hard to properly 
 To solve that we need to exclude another data set so we can perform validation upon that data set before we start testing - this data set is called validation data set. 
 But if we must split data in 3 different data sets than we are limiting amount of data that we can use for training our learning algorithm also results might be different depending on combination of training/validation sets used. 
 k-fold cross validation resolves this problem and with such approach validation sets are no longer needed. 
-This approach can be computationally expensive because we must run "k" learning experiments for each of hyperparameters combination. But benefit of using this model is that it does not waste too much data.</p>
+This approach can be computationally expensive because we must run "k" learning experiments on for each of hyperparameters combination. But benefit of using this model is that it does not waste too much data.</p>
+<p>*<em>
+Default k-fold CV splits dataset into k consecutive folds (</em>without shuffling by default<em>). Randomized CV splitters may return different results for each call of split. Results could be identical by setting random_state to an integer. Each fold is then used once as a validation while the k - 1 remaining folds form the training set.
+ A test set is held out for final evaluation, but the validation set is no longer needed when doing CV. In the basic approach, k-fold CV, the training set is split into k smaller sets:</em>A model is trained using k-1 of the folds as training data;<em></em>the resulting model is validated on the remaining part of the data (i.e., it is used as a test set to compute a performance measure such as accuracy).*
+The performance measure reported by k-fold cross-validation is then the average of the values computed in the loop.</p>
+<p>**GridSearchCV in same way divides the training data into K folds while performing.</p>
 
 </div>
 </div>
@@ -14035,7 +14040,9 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong> Hint: </strong> The answer comes from the output of the code snipped above.</p>
 <p><strong>Answer: </strong>
-max_depth is 4 for the optimal model.</p>
+**max_depth is 4 for the optimal model.</p>
+<p>**In question 6 we concluded that maximum depth which results in model that best generalize unseen data is around value 3. This coclusion is based on complexity curve, which is solid estimation but we have to keep in mind that shaded regions of both the complexity curves denote the uncertainty in those curves.
+Once we fit the decision tree regressor to the training data we can get more accurate results which is max_depth 4.</p>
 
 </div>
 </div>
@@ -14132,13 +14139,13 @@ Predicted selling price for Client 3&#39;s home: $923,766.67
 <ul>
 <li>What price would you recommend each client sell his/her home at? </li>
 </ul>
-<p>Predicted selling price for Client 1's home: $402,531.82
+<p>Predicted selling price for Client 1's home: \$402,531.82
 This is little less than average price for home since all parameters are around average values.
-Predicted selling price for Client 2's home: $237,900.00
+Predicted selling price for Client 2's home: \$237,900.00
 This is properly suggested as low price since it has low number of rooms, high poverty percentage and high student teacher ratio.
-Predicted selling price for Client 3's home: $923,766.67
+Predicted selling price for Client 3's home: \$923,766.67
 High price due to very low PTRATIO, high number of rooms and good student/teacher ratio.
-If we consider that mean price of home is $454,342.94 and relevant information from <strong>Data Exploration</strong> chapter:
+If we consider that mean price of home is \$454,342.94 and relevant information from <strong>Data Exploration</strong> chapter:
 Higher RM would mean higher MEDV because it means house is in the neighborhood that has higher average number of houses - meaning people with higher income will be able to afford them leading to higher class neighborhood leading to higher prices of houses. Higher number of LSTAT would mean lower MEDV because it would indicate higher number of lower class people in neighborhood. Lower PTRATIO would mean higher MEDV because it means that people can afford better education</p>
 
 </div>
