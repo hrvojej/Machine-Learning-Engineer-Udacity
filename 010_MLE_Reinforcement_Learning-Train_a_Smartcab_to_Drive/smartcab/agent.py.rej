@@ -1,0 +1,9 @@
+diff a/010_MLE_Reinforcement_Learning-Train_a_Smartcab_to_Drive/smartcab/agent.py b/010_MLE_Reinforcement_Learning-Train_a_Smartcab_to_Drive/smartcab/agent.py	(rejected hunks)
+@@ -86,6 +86,7 @@
+ 		###########
+ 		# Calculate the maximum Q-value of all actions for a given state
+ 		maxQ = max([self.Q[state][action] for action in self.Q[state]])
++		#or simply: maxQ = max(self.Q[state].values())
+ 		
+ 		return maxQ
+ 
