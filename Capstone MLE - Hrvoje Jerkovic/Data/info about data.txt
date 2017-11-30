@@ -1,0 +1,5 @@
+We'we provided here sample data with smaller number of records.
+Full datasets could be found here:
+https://www.kaggle.com/c/talkingdata-mobile-user-demographics/data
+Total size of unzipped data is several GB. 
+Digital ocean with high memory/CPU virtual server was used for all computations.
