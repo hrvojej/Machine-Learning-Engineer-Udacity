@@ -1,2 +1,1 @@
-### Machine Learning Engineer Udacity Certification Program
-### Hrvoje Jerkovic - hrvojej@gmail.com
+### My projects submissions for Machine Learning Engineer Udacity Certification Program
